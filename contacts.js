@@ -5,6 +5,7 @@ require('colors');
 
 const contactsPath = path.join(__dirname, 'db', 'contacts.json');
 
+//** Creating a list of contacts */
 const listContacts = async () => {
 	try {
 		const contacts = await fs.readFile(contactsPath, { encoding: 'utf-8' })
@@ -14,6 +15,7 @@ const listContacts = async () => {
 	}
 };
 
+//** Getting contact by ID */
 const getContactById = async contactId => {
 	try {
 		const contacts = await listContacts()
@@ -23,6 +25,7 @@ const getContactById = async contactId => {
 	}
 };
 
+//** Deleting a contact by ID */
 const removeContact = async contactId => {
 	try {
 		const contacts = await listContacts()
@@ -35,6 +38,7 @@ const removeContact = async contactId => {
 	}
 };
 
+//** Adding a contact to the list */
 const addContact = async (name, email, phone) => {
     try {
         
